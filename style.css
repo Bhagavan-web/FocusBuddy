@@ -1,0 +1,202 @@
+/* ====== Base Styles ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f5f9f6;
+  --primary: #4caf7d;
+  --primary-dark: #3b8b64;
+  --accent: #f6d365;
+  --text-dark: #2f3e46;
+  --text-light: #fff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* ====== Header ====== */
+header {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+header p {
+  font-size: 1rem;
+  color: #607d8b;
+}
+
+/* ====== Form & Setup ====== */
+#setup {
+  background: var(--text-light);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem auto;
+}
+
+#setup h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+#start-btn {
+  background: var(--primary);
+  color: var(--text-light);
+}
+
+#start-btn:hover {
+  background: var(--primary-dark);
+}
+
+#pause-btn,
+#reset-btn {
+  background: var(--accent);
+}
+
+#pause-btn:hover,
+#reset-btn:hover {
+  filter: brightness(0.9);
+}
+
+/* ====== Focus Mode ====== */
+#focus-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 500px;
+  width: 100%;
+}
+
+#current-task {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+#time-display {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.focus-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.focus-controls button {
+  background: var(--text-light);
+  color: var(--primary-dark);
+}
+
+.focus-controls button:hover {
+  background: var(--accent);
+}
+
+/* ====== History ====== */
+#history {
+  margin-top: 2rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+#history-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+#history-list {
+  list-style: none;
+}
+
+#history-list li {
+  background: var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
+  box-shadow: var(--shadow);
+  font-size: 0.9rem;
+}
+
+/* ====== Footer ====== */
+footer {
+  margin-top: auto;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #78909c;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 500px) {
+  #setup,
+  #focus-mode {
+    padding: 1rem;
+  }
+
+  #time-display {
+    font-size: 2.2rem;
+  }
+}

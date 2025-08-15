@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FocusBuddy — Minimal Distraction-Free Timer</title>
+  <!-- Optional: link your CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>FocusBuddy</h1>
+    <p>One task. One timer. Zero distractions.</p>
+  </header>
+
+  <main>
+    <!-- Setup Panel -->
+    <section id="setup" aria-labelledby="setup-title">
+      <h2 id="setup-title">Set Your Focus</h2>
+
+      <form id="focus-form">
+        <label for="task-input">Task</label>
+        <input
+          id="task-input"
+          type="text"
+          name="task"
+          placeholder="e.g., Study DSA arrays"
+          maxlength="120"
+          required
+        />
+
+        <div class="time-row">
+          <label for="minutes-input">Minutes</label>
+          <input
+            id="minutes-input"
+            type="number"
+            name="minutes"
+            min="1"
+            max="120"
+            value="25"
+            required
+          />
+        </div>
+
+        <div class="controls">
+          <button type="button" id="start-btn" aria-label="Start timer">Start</button>
+          <button type="button" id="pause-btn" aria-label="Pause timer" disabled>Pause</button>
+          <button type="button" id="reset-btn" aria-label="Reset timer" disabled>Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Live Timer / Minimal UI Mode -->
+    <section id="focus-mode" aria-live="polite" hidden>
+      <h2 class="visually-hidden">Focus Mode</h2>
+
+      <div id="current-task" role="status" aria-atomic="true">
+        <!-- Filled by JS: current task text -->
+      </div>
+
+      <div id="time-display" aria-label="Countdown timer">25:00</div>
+
+      <div class="focus-controls">
+        <button type="button" id="focus-pause-btn" aria-label="Pause">Pause</button>
+        <button type="button" id="focus-resume-btn" aria-label="Resume" hidden>Resume</button>
+        <button type="button" id="focus-exit-btn" aria-label="Exit focus mode">Exit</button>
+      </div>
+    </section>
+
+    <!-- History (optional) -->
+    <section id="history" aria-labelledby="history-title">
+      <h2 id="history-title">Recent Sessions</h2>
+      <ul id="history-list" aria-live="polite">
+        <!-- Filled by JS: list items like “25m • Study DSA arrays • Completed” -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <small>&copy; <span id="year"></span> FocusBuddy — Vanilla HTML, CSS & JavaScript</small>
+  </footer>
+
+  <!-- Audio alert (replace src if you add your own) -->
+  <audio id="alarm-audio" preload="auto">
+    <source src="FocusBuddy/digital-alarm-02-151919.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Optional: link your JS file -->
+  <!-- <script src="script.js"></script> -->
+  
+  <!-- Accessibility helper -->
+  <style>
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px; width: 1px;
+      overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+  </style>
+ <script src="script.js"></script>
+</body>
+</html>

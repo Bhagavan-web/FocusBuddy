@@ -16,4 +16,4 @@ Built entirely with HTML, CSS, and JavaScript, it works directly in the browser 
 ## Demo
 You can try Focus Buddy directly in your browser by opening the `index.html` file.
 
-git clone:https://github.com/YOUR_USERNAME/FocusBuddy.git
+git clone:https://github.com/Bhagavan-web/FocusBuddy.git
